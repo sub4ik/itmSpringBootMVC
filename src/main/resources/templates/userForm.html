@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+<body>
+<h1>User Form</h1>
+<form th:action="@{${user.id == null ? '/users/create' : '/users/' + user.id + '/edit'}}" method="post" accept-charset="UTF-8">
+    <input type="hidden" name="id" th:value="*{id}" />
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" th:value="*{name}" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" th:value="*{email}" />
+    </div>
+    <button type="submit">Save</button>
+    <a href="/users">Cancel</a>
+</form>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>User Form</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>User Form</h1>-->
+<!--<form action="/users/${(user.id == null) ? 'create' : user.id + '/edit'}" method="post">-->
+
+<!--    <input type="hidden" name="id" th:value="*{id}" />-->
+<!--    <div>-->
+<!--        <label for="name">Name:</label>-->
+<!--        <input type="text" name="name" th:value="*{name}" />-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="email">Email:</label>-->
+<!--        <input type="email" name="email" th:value="*{email}" />-->
+<!--    </div>-->
+<!--    <button type="submit">Save</button>-->
+<!--    <a href="/users">Cancel</a>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>User Form</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>User Form</h1>-->
+<!--    <form th:action="@{${user.id} == null ? '/users/create' : '/users/' + ${user.id} + '/edit'}" method="post">-->
+<!--        <input type="hidden" th:field="*{id}"/>-->
+<!--        <div>-->
+<!--            <label for="name">Name:</label>-->
+<!--            <input type="text" th:field="*{name}"/>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label for="email">Email:</label>-->
+<!--            <input type="email" th:field="*{email}"/>-->
+<!--        </div>-->
+<!--        <button type="submit">Save</button>-->
+<!--        <a th:href="@{/users}">Cancel</a>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
